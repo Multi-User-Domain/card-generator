@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('/medieval.ttf')
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background-position: center;
+  background-image: url('/wizard_shop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.color-egg {
+  background-color: #FAF0E6; /* Linen */
+  color: #8B4513; /* SaddleBrown */
+}
+
+input, textarea, select {
+  padding: 10px;
+  margin: 10px;
+  background-color: #FAF0E6; /* Linen */
+  color: #8B4513; /* SaddleBrown */
+  /*background-color: brown;*/
+}
+
+
+
+.button-bounce{
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  background: linear-gradient(to bottom, #DAA520 0%, #8B4513  100%);
+  color: #FFF5EE; /* Seashell */
+  transition: all 0.3s ease;
+}
+.button-bounce:hover {
+  /* Gradient from SaddleBrown to GoldenRod on hover */
+  color: #FFF5EE; /* Seashell */
+  background: linear-gradient(to bottom, #DAA520 0%, #8B4513  100%);
+  border-color: #DAA520; /* GoldenRod */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  transform: scale(1.10);
+}
+
+
+.button-bounce:active {
+  transform: scale(0.95);
+}
+
+input::placeholder, textarea::placeholder {
+  /*color:white;*/
+  color: #8B451370; /* SaddleBrown */
+}
+
+.cardtexture {
+  color: rgb(var(--foreground-rgb));
+  background-image: url('/cardtexture.jpg');
+}
+
+.button-fantasy {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  color: #FAF0E6; /* Linen */
+  border: 3px solid #8B4513; /* SaddleBrown */
+  background: linear-gradient(to bottom, #DAA520 0%, #8B4513 100%); /* Gradient from GoldenRod to SaddleBrown */
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.button-fantasy:hover {
+  /* Gradient from SaddleBrown to GoldenRod on hover */
+  background: linear-gradient(to bottom, #DAA520 0%, #8B4513  100%);
+  color: #FFF5EE; /* Seashell */
+  border-color: #DAA520; /* GoldenRod */
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  transform: scale(1.05);
+}
+
+.button-fantasy:active {
+  transform: scale(0.95);
+}
+
+.wood {
+  background: url('/darkwood.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-fantasy {
+  font-family: 'Cinzel', sans-serif;
+  padding: 5px;
+  font-size: 2em;
+  color: #F9A3B0;
+  text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px);
+  }
+  60% {
+    transform: translateY(-7px);
+  }
+}
+
+.fade-in-bounce {
+  animation: fadeIn 1s, bounce 1s;
+}
