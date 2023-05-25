@@ -77,8 +77,8 @@ const ResistancesForm = ({ onChange }: ResistancesFormProps) => {
     return (
       <table className="ml-10">
         {convertDictToArray(resistances).map( (v, i) => (
-          <tr  className="color-egg" >
-            <td className="px-5" key={i}>
+          <tr  key={i} className="color-egg" >
+            <td className="px-5" >
             	{v['name']}: {v['mudcombat:resistanceValue']}
           	</td>
           	<td>
