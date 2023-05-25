@@ -4,6 +4,7 @@ import InstantActionsForm from './InstantActionsForm';
 import ResistancesForm from './ResistancesForm';
 import { CardStateContext, initialCardState } from './Context';  
 import { after } from 'node:test';
+import { warnOptionHasBeenMovedOutOfExperimental } from 'next/dist/server/config';
 
 const CardForm = () => {
   // const [card, setCard] = useState(initialCardState);
@@ -21,6 +22,23 @@ const CardForm = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(cardState);
+    fetch('https://api.realm.games.coop/cards/', {
+      	method: 'POST',
+      	body: JSON.stringify(cardState),
+      	headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+          'Access-Control-Allow-Origin': '"*"'
+      	}
+    }).then(function (response) {
+      	if (response.ok) {
+        			return response.json();
+      	}
+      		return Promise.reject(response);
+    }).then(function (data) {
+      	console.log(data);
+    }).catch(function (error) {
+      	console.warn('Something went wrong.', error);
+    });
   };
 
 // TODO: what to give to the id field ? generate it ?
