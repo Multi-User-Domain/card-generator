@@ -92,8 +92,8 @@ const InstantActionsForm = ({ onChange }: InstantActionsFormProps) => {
     return (
       <table className="ml-10">
         {cardInstantActions.map( (v, i) => (
-          <tr  className="color-egg  fade-in-bounce" >
-            <td className="px-5" key={i}>
+          <tr  key={i} className="color-egg  fade-in-bounce" >
+            <td className="px-5">
             	{v.name} 
           	</td>
           	<td>
