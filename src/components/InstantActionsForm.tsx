@@ -99,7 +99,6 @@ const InstantActionsForm = ({ onChange }: InstantActionsFormProps) => {
           	<td>
               <button className="button-bounce  " type="button" onClick={() => remove(v.uri)}>❌</button>
           	</td>
-          <br/>
         </tr>
         ))}
       </table>

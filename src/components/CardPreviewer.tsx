@@ -34,7 +34,7 @@ export default function CardPreviewer() {
   return(
     <> 
       {/* Card Container */}
-      <div className="relative w-96 h-128 bg-white rounded-lg shadow-lg cardtexture  border-4 border-black">
+      <div className="relative cardsize bg-white overflow-scroll rounded-lg shadow-lg cardtexture  border-4 border-black">
         {/* Card Title*/}
         <div className="absolute   w-full p-2  flex items-center">
             { cardState["n:fn"] }<br/>
@@ -51,7 +51,7 @@ export default function CardPreviewer() {
           />
         </div>
         {/* Card Text */}
-        <div className="h-1/3 w-full p-4 overflow-scroll">
+        <div className="h-1/3 w-full p-4">
           <span className="text-black">
             <br/>
 						{ showCurrentInstantActions() }<br/>

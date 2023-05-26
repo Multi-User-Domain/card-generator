@@ -19,10 +19,10 @@ const CardForm = () => {
     setCardState({ ...cardState, [property]: value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+
+	const sendCardJsonLD = (targetUrl: string) =>  {
     console.log(cardState);
-    fetch('https://api.realm.games.coop/cards/', {
+    fetch(targetUrl, {
       	method: 'POST',
       	body: JSON.stringify(cardState),
       	headers: {
@@ -39,6 +39,15 @@ const CardForm = () => {
     }).catch(function (error) {
       	console.warn('Something went wrong.', error);
     });
+	}
+
+
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // const targetUrl = 'https://api.realm.games.coop/cards/' 
+    const targetUrl = 'http://localhost:5000/cards/' 
+    sendCardJsonLD(targetUrl);
   };
 
 // TODO: what to give to the id field ? generate it ?

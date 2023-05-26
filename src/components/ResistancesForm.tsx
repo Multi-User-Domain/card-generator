@@ -84,7 +84,6 @@ const ResistancesForm = ({ onChange }: ResistancesFormProps) => {
           	<td>
               <button className="button-bounce  " type="button" onClick={() => remove(v['@id'])}>❌</button>
           	</td>
-          <br/>
         </tr>
         ))}
       </table>

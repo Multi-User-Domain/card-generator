@@ -68,6 +68,11 @@ input::placeholder, textarea::placeholder {
   color: #8B451370; /* SaddleBrown */
 }
 
+.cardsize {
+  height: 36em;
+  width: 24em;
+}
+
 .cardtexture {
   color: rgb(var(--foreground-rgb));
   background-image: url('/cardtexture.jpg');
