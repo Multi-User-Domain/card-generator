@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 interface IGenericThingForm {
     id?: string,
@@ -7,14 +8,23 @@ interface IGenericThingForm {
 
 const GenericThingForm = ({id, shape}: IGenericThingForm) => {
 
-    //if(id == null) id = randomUUID();
-    if(id == null) id = "replace-me";
+    const [generatedId, setGeneratedId] = useState<string|null>(null);
 
-   let form = React.createElement("shacl-form", {
-       "data-shapes": shape,
-       "id": id,
-       "className": "genric-thing-form"
-   });
+    if(id == null) {
+        if(generatedId != null) id = generatedId;
+        else {
+            let tmp = "generic-thing-" + uuidv4();
+            id = tmp;
+            console.log(id);
+            setGeneratedId(tmp);
+        }
+    }
+
+    let form = React.createElement("shacl-form", {
+        "data-shapes": shape,
+        "id": id,
+        "className": "genric-thing-form"
+    });
 
     return (
         <div>
