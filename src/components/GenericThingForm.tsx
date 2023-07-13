@@ -15,7 +15,6 @@ const GenericThingForm = ({id, shape}: IGenericThingForm) => {
         else {
             let tmp = "generic-thing-" + uuidv4();
             id = tmp;
-            console.log(id);
             setGeneratedId(tmp);
         }
     }
