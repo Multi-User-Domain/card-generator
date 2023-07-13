@@ -3,8 +3,6 @@ import HealthPointsForm from './HealthPointsForm';
 import InstantActionsForm from './InstantActionsForm';
 import ResistancesForm from './ResistancesForm';
 import { CardStateContext, initialCardState } from './Context';  
-import { after } from 'node:test';
-import { warnOptionHasBeenMovedOutOfExperimental } from 'next/dist/server/config';
 
 const CardForm = () => {
   // const [card, setCard] = useState(initialCardState);
